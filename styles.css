@@ -1,0 +1,217 @@
+/* =========================
+   UMUCO SOLUTIONS — Kawaii
+   Pastel, rounded, playful UI
+   Matches index.html structure
+   ========================= */
+
+/* Theme variables */
+:root{
+  --bg: #fff8fb;
+  --card: #ffffff;
+  --ink: #2b2b2b;
+  --muted: #7a7a86;
+  --accent: #ff6b81;        /* warm vermilion */
+  --accent-2: #7fd3c7;      /* soft teal */
+  --accent-3: #ffd9b8;      /* warm cream */
+  --shadow: 0 10px 30px rgba(43,43,43,0.06);
+  --glass: rgba(255,255,255,0.75);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --container: 1100px;
+  --ease: cubic-bezier(.2,.9,.3,1);
+  font-family: 'Poppins', 'Noto Sans JP', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, var(--bg), #fff);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+/* -------------------------
+   Background media helpers
+   ------------------------- */
+.bg-media{position:fixed;inset:0;z-index:-2;overflow:hidden}
+.bg-video{position:fixed;right:50%;top:50%;min-width:100%;min-height:100%;transform:translate(50%,-50%);object-fit:cover;z-index:-2;filter:brightness(0.9) saturate(0.95)}
+.bg-fallback{position:fixed;inset:0;background-size:cover;background-position:center;z-index:-3;display:none}
+.bg-overlay{position:fixed;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,250,248,0.6));z-index:-1}
+
+/* -------------------------
+   Header
+   ------------------------- */
+.site-header{
+  position:sticky;top:0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  z-index:40;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0}
+.brand{display:flex;align-items:center;gap:0.75rem}
+.logo{width:64px;height:64px;border-radius:16px;object-fit:cover;border:3px solid rgba(255,255,255,0.6);box-shadow:var(--shadow)}
+.brand-text h1{margin:0;font-size:1.15rem;letter-spacing:0.6px;text-transform:lowercase}
+.glow-title{
+  font-weight:800;
+  color:var(--ink);
+  text-transform:lowercase;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 6px rgba(255,107,129,0.14),
+    0 0 18px rgba(127,211,199,0.06);
+}
+
+/* nav */
+.nav a{margin-left:1rem;color:var(--ink);text-decoration:none;font-weight:600}
+.btn-outline{border:1px solid rgba(0,0,0,0.06);padding:0.45rem 0.8rem;border-radius:12px;text-decoration:none;color:var(--ink);background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85))}
+
+/* -------------------------
+   Hero
+   ------------------------- */
+.hero{padding:5.5rem 0 3rem}
+.hero-inner{display:flex;gap:2rem;align-items:center}
+.hero-title{font-size:1.6rem;margin:0;color:var(--ink);font-weight:700}
+.hero-lead{color:var(--muted);margin:0.5rem 0 1rem}
+.hero-ctas{display:flex;gap:0.6rem;flex-wrap:wrap}
+.btn-primary{
+  background: linear-gradient(180deg,var(--accent), #ff4f6f);
+  color:#fff;padding:0.7rem 1.1rem;border-radius:14px;text-decoration:none;font-weight:700;
+  box-shadow: 0 8px 22px rgba(255,107,129,0.12);transition:transform .14s var(--ease), box-shadow .14s var(--ease);
+}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(255,107,129,0.14)}
+.btn-secondary{
+  background: linear-gradient(180deg, rgba(127,211,199,0.12), rgba(127,211,199,0.06));
+  color:var(--accent-2);padding:0.6rem 0.9rem;border-radius:12px;border:1px solid rgba(127,211,199,0.12);font-weight:700;text-decoration:none;
+}
+
+/* small cards in hero */
+.chat-card, .qr-card{background:var(--glass);padding:0.8rem;border-radius:12px;backdrop-filter: blur(6px);text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+.qr-card img{width:160px;height:160px;border-radius:12px;background:#fff;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+
+/* -------------------------
+   Sections and cards
+   ------------------------- */
+.section{padding:2rem 0}
+.jap-style .card{border-left:4px solid var(--accent);padding:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));border-radius:14px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+
+/* pricing */
+.pricing-grid{display:flex;gap:1rem;flex-wrap:wrap}
+.price-card{flex:1;padding:1rem;border-radius:14px;background:var(--card);text-align:center;box-shadow:var(--shadow)}
+.price{font-size:1.25rem;color:var(--accent);margin:0.4rem 0}
+.price-card.featured{border:2px dashed rgba(216,67,21,0.08)}
+
+/* LP links */
+.lp-list{list-style:none;padding:0;margin:0 0 1rem 0}
+.lp-list li{padding:0.5rem 0;border-bottom:1px dashed rgba(0,0,0,0.04)}
+.lp-add{display:flex;gap:0.5rem;flex-wrap:wrap}
+.lp-add input{flex:1;padding:0.7rem;border-radius:12px;border:1px solid #f0e9e9;background:linear-gradient(180deg,#fff,#fffaf6)}
+
+/* -------------------------
+   Everyday spinner
+   ------------------------- */
+.spinner-wrap{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.spinner-image img{width:180px;height:130px;object-fit:cover;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.spinner-word{font-weight:800;font-size:1.1rem;color:var(--accent)}
+.spinner-desc{color:var(--muted);margin-top:0.4rem}
+
+/* -------------------------
+   Contact form — kawaii UI
+   ------------------------- */
+.contact-inner{display:flex;gap:2rem;flex-wrap:wrap}
+.contact-card{flex:1;min-width:300px;background:linear-gradient(180deg,#fff,#fffaf6);padding:1rem;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,0.06)}
+.contact-info{flex:0.9;min-width:220px;color:var(--muted)}
+
+/* Youth form specifics */
+.youth-form{background:transparent;padding:0}
+.form-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
+.badge{background:linear-gradient(90deg, rgba(255,107,129,0.12), rgba(127,211,199,0.08));color:var(--accent);padding:0.25rem 0.6rem;border-radius:999px;font-weight:700;font-size:0.85rem}
+.helper{color:var(--muted);margin:0;font-size:0.9rem}
+
+/* Floating label fields */
+.field{position:relative;margin-top:1rem}
+.field input,.field textarea{
+  width:100%;padding:0.95rem 0.9rem;border-radius:12px;border:1px solid rgba(0,0,0,0.06);background:linear-gradient(180deg,#fff,#fffaf6);outline:none;transition:box-shadow .14s var(--ease),border-color .14s var(--ease);
+  font-size:0.95rem;color:var(--ink)
+}
+.field textarea{min-height:110px;resize:vertical}
+.field label{
+  position:absolute;left:12px;top:12px;color:#9b9b9b;pointer-events:none;transition:all .16s var(--ease);background:transparent;padding:0 6px;border-radius:6px;font-weight:600;font-size:0.92rem
+}
+.field .hint{display:block;margin-top:0.35rem;color:var(--muted);font-size:0.82rem}
+
+/* label float when input has content or focus */
+.field input:focus,.field textarea:focus{border-color:rgba(255,107,129,0.28);box-shadow:0 8px 24px rgba(255,107,129,0.06)}
+.field input:not(:placeholder-shown)+label,
+.field textarea:not(:placeholder-shown)+label,
+.field input:focus+label,
+.field textarea:focus+label{
+  top:-10px;font-size:0.78rem;color:var(--accent)
+}
+
+/* actions and messages */
+.form-actions{display:flex;gap:0.6rem;margin-top:0.8rem;align-items:center}
+.form-msg{margin-top:0.6rem;font-size:0.92rem;color:var(--muted)}
+.auto-reply{margin-top:1rem;padding:0.7rem;background:#f0fff6;border-left:4px solid #2ecc71;border-radius:10px}
+.hidden{display:none}
+
+/* -------------------------
+   Social icons and footer
+   ------------------------- */
+.socials{display:flex;gap:0.6rem;margin-top:0.6rem}
+.social svg{width:36px;height:36px;border-radius:8px;padding:6px;background:linear-gradient(180deg,#fff,#fffaf6);box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+.site-footer{padding:1.2rem 0;text-align:center;color:var(--muted)}
+.footer-qr{margin-top:1rem;padding-top:1rem;border-top:1px dashed rgba(0,0,0,0.06)}
+.footer-qr img{width:180px;height:180px;border-radius:12px;background:#fff;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+.qr-helper{color:var(--muted);font-size:0.88rem;margin-top:0.4rem}
+
+/* -------------------------
+   PWA prompt
+   ------------------------- */
+.pwa-prompt{position:fixed;bottom:14px;right:14px;background:var(--card);border:1px solid rgba(0,0,0,0.06);padding:0.5rem;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,0.06);display:flex;gap:0.5rem;align-items:center}
+.btn-small{padding:0.45rem 0.7rem;border-radius:10px;border:1px solid rgba(0,0,0,0.06);background:linear-gradient(180deg,#fff,#fffaf6)}
+
+/* -------------------------
+   Micro animations
+   ------------------------- */
+@keyframes floatUp {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.btn-primary{animation: floatUp 6s ease-in-out infinite}
+
+/* subtle focus ring for accessibility */
+:focus{outline:none}
+a:focus, button:focus, input:focus, textarea:focus{
+  box-shadow: 0 0 0 6px rgba(127,211,199,0.08);
+  border-color: rgba(127,211,199,0.18);
+}
+
+/* -------------------------
+   Responsive tweaks
+   ------------------------- */
+@media (max-width: 900px){
+  .hero-inner{flex-direction:column-reverse;text-align:center}
+  .nav{display:none}
+  .container{padding:0.8rem}
+  .logo{width:56px;height:56px}
+  .spinner-image img{width:140px;height:100px}
+  .footer-qr img{width:150px;height:150px}
+  .hero-title{font-size:1.3rem}
+}
+
+/* -------------------------
+   Utility helpers
+   ------------------------- */
+.text-muted{color:var(--muted)}
+.center{display:flex;align-items:center;justify-content:center}
+.round{border-radius:999px}
+.shadow-soft{box-shadow:0 8px 24px rgba(0,0,0,0.06)}
