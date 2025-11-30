@@ -1,0 +1,61 @@
+/* banner.css — PWA install banner only */
+
+.install-banner {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 0.9rem 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+}
+
+.install-banner.hidden {
+  display: none;
+}
+
+.install-banner p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.install-banner__btn {
+  background: linear-gradient(180deg, #ff6b81, #ff4f6f);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255,107,129,0.14);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.install-banner__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255,107,129,0.18);
+}
+
+/* Animation */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Mobile: center bottom */
+@media(max-width:900px){
+  .install-banner {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+}
