@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="rn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>umuco solutions</title>
+  <meta name="description" content="Umuco Solutions — Landing Pages ku buntu, subscription 50,000 FBU/ukwezi. WhatsApp direct." />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" />
+</head>
+<body>
+  <!-- PWA install prompt area -->
+  <div id="pwaPrompt" class="pwa-prompt hidden">
+    <button id="installBtn" class="btn-small">Shira kuri phone</button>
+    <button id="dismissPwa" class="btn-small btn-outline">Hana</button>
+  </div>
+
+  <!-- Video background (fixed full screen) with image fallback -->
+  <div class="bg-media">
+    <video id="bgVideo" autoplay muted loop playsinline class="bg-video">
+      <!-- Replace src with your mp4 web-optimized file -->
+      <source src="background.mp4" type="video/mp4">
+      <!-- Fallback image shown if video not supported or blocked -->
+    </video>
+    <div class="bg-fallback" style="background-image:url('background-fallback.jpg')"></div>
+    <div class="bg-overlay"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="UMUCO SOLUTIONS" class="logo" />
+        <div class="brand-text">
+          <h1 class="glow-title">umuco solutions</h1>
+          <p class="subtitle">Landing Pages ku buntu · Subscription 50,000 FBU / ukwezi · Youth & Culture</p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#services">Serivisi</a>
+        <a href="#pricing">Igiciro</a>
+        <a href="#lp-links">LP zabo</a>
+        <a href="#contact" class="btn-outline">Vugana</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h2 class="hero-title">Twubake umuco wawe kuri internet — mu buryo bwa Japon</h2>
+          <p class="hero-lead">Design yoroheje, minimal, ibereye urubyiruko; responsive, PWA-ready, hamwe na WhatsApp direct.</p>
+          <div class="hero-ctas">
+            <a class="btn-primary" id="waBtn" href="https://wa.me/25771633859" target="_blank" rel="noopener">Vugana kuri WhatsApp</a>
+            <a class="btn-secondary" href="#contact">Ohereza ubutumwa</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <!-- WhatsApp QR (auto-generated via external API) -->
+          <div class="qr-card">
+            <img id="waQr" alt="WhatsApp QR" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/25771633859" />
+            <p>Scan kugira ubandikire kuri WhatsApp</p>
+          </div>
+
+          <!-- tawk.to status -->
+          <div class="chat-card">
+            <p><strong>Live chat</strong></p>
+            <div id="tawkStatus">Online</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section services jap-style">
+      <div class="container">
+        <h3>Serivisi zacu</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Starter LP ku buntu</h4>
+            <p>Landing Page yoroheje, contact form (mailto + WhatsApp autoresponder), QR, responsive.</p>
+          </div>
+          <div class="card">
+            <h4>Professional</h4>
+            <p>50,000 FBU/ukwezi: hosting, updates, analytics, custom design, PWA support.</p>
+          </div>
+          <div class="card">
+            <h4>Support & Training</h4>
+            <p>Twigisha uko ukoresha LP, SEO basics, no gutunganya content yoroheje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section pricing">
+      <div class="container">
+        <h3>Igiciro</h3>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h4>Starter</h4>
+            <p class="price">Ku buntu</p>
+            <a class="btn-primary" href="https://wa.me/25771633859" target="_blank">Tangira ubu</a>
+          </div>
+          <div class="price-card featured">
+            <h4>Professional</h4>
+            <p class="price">50,000 FBU / ukwezi</p>
+            <a class="btn-primary" href="https://wa.me/25771633859" target="_blank">Subscribe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LP Links (where users paste links to LPs they made) -->
+    <section id="lp-links" class="section lp-links">
+      <div class="container">
+        <h3>Aho bashira LP zabo</h3>
+        <p>Shira links hano kugira ngo tubone LP zabo vuba:</p>
+        <ul id="lpList" class="lp-list">
+          <!-- Example items; replace with dynamic content or paste real links -->
+          <li><a href="https://example.com/lp1" target="_blank">LP - Aline (Bujumbura)</a></li>
+          <li><a href="https://example.com/lp2" target="_blank">LP - Jean (Gitega)</a></li>
+        </ul>
+
+        <form id="lpAddForm" class="lp-add">
+          <input id="lpTitle" placeholder="Izina rya LP (ex: LP - Aline)" required />
+          <input id="lpUrl" placeholder="https://..." required />
+          <button type="submit" class="btn-primary">Shira link</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Everyday Lifestyle Spinner -->
+    <section class="section spinner-section">
+      <div class="container">
+        <h3>Everyday Vibes</h3>
+        <div class="spinner-wrap">
+          <div id="spinnerImage" class="spinner-image">
+            <img src="youth-1.jpg" alt="youth image" />
+          </div>
+          <div class="spinner-text">
+            <div id="spinnerWord" class="spinner-word">Inspiration</div>
+            <p id="spinnerDesc" class="spinner-desc">Imvugo, urwenya, imigani, n'ibindi bikundwa n'urwaruka.</p>
+            <button id="nextSpinner" class="btn-small">Next</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact: mailto form + WhatsApp autoresponder -->
+    <section id="contact" class="section contact">
+      <div class="container contact-inner">
+        <div class="contact-card">
+          <h3>Vugana natwe</h3>
+          <p>WhatsApp direct: <a href="https://wa.me/25771633859" target="_blank">+257 71 633 859</a></p>
+
+          <!-- Contact form: sends mailto to owner AND opens WhatsApp with prefilled message -->
+          <form id="contactForm">
+            <label for="name">Izina</label>
+            <input id="name" name="name" type="text" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+
+            <label for="message">Ubutumwa</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Ohereza</button>
+              <a class="btn-outline" href="https://wa.me/25771633859" target="_blank">Vugana kuri WhatsApp</a>
+            </div>
+          </form>
+
+          <div id="autoReplyNotice" class="auto-reply hidden">
+            <p><strong>Auto‑reply:</strong> Tuzagusubiza vuba kuri WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <h4>Aho turi</h4>
+          <p>Bujumbura, Burundi</p>
+
+          <h4>Imbuga</h4>
+          <p>Email: <a href="mailto:arakazabruce2@gmail.com">arakazabruce2@gmail.com</a></p>
+
+          <!-- Social icons (inline SVG) -->
+          <div class="socials">
+            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook" class="social">
+              <!-- Facebook SVG -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 4.99 3.66 9.12 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.39-3.62 3.52-3.62. 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.59l-.41 2.9h-2.18V22C18.34 21.19 22 17.06 22 12.07z"/></svg>
+            </a>
+
+            <a href="https://instagram.com/yourpage" target="_blank" aria-label="Instagram" class="social">
+              <!-- Instagram SVG -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-3.6a1.12 1.12 0 11-1.12 1.12A1.12 1.12 0 0118.4 4.6z"/></svg>
+            </a>
+
+            <a href="https://twitter.com/yourpage" target="_blank" aria-label="Twitter" class="social">
+              <!-- Twitter SVG -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2" xmlns="http://www.w3.org/2000/svg"><path d="M22 5.92c-.63.28-1.3.47-2 .56a3.48 3.48 0 001.53-1.92 6.9 6.9 0 01-2.2.84 3.45 3.45 0 00-5.88 2.97A9.8 9.8 0 013 4.9a3.45 3.45 0 001.07 4.6 3.4 3.4 0 01-1.56-.43v.04a3.45 3.45 0 002.77 3.38 3.5 3.5 0 01-1.55.06 3.46 3.46 0 003.22 2.4A6.92 6.92 0 012 19.54a9.77 9.77 0 005.29 1.55c6.35 0 9.83-5.26 9.83-9.83v-.45A7 7 0 0022 5.92z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> UMUCO SOLUTIONS — Landing Pages ku buntu & subscription 50,000 FBU/ukwezi.</p>
+      <p class="muted">Made with ❤️ — Japon style minimal</p>
+    </div>
+  </footer>
+
+  <!-- tawk.to embed (replace PROPERTY_ID with your tawk.to property id) -->
+  <script>
+    // Replace with your tawk.to property id
+    var TAWK_PROPERTY_ID = 'TAWK_TO_PROPERTY_ID';
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/' + TAWK_PROPERTY_ID + '/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
