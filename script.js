@@ -124,29 +124,69 @@ document.addEventListener('DOMContentLoaded', initPortfolioCarousel);
   
   
   
-  /* ========== Everyday spinner ========== */
-  function initSpinner() {
-    const spinnerData = [
-      { word: 'Inspiration', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img: 'youth-1.jpg' },
-      { word: 'Urwenya', desc: '“Umuntu wese afite inkuru ye — tanga akanya.”', img: 'youth-2.jpg' },
-      { word: 'Imigani', desc: '“Uko ugenda niko ugira.”', img: 'youth-3.jpg' },
-      { word: 'Motivation', desc: '“Kora uyu munsi; ejo ni inyongera.”', img: 'youth-4.jpg' }
-    ];
-    let idx = 0;
-    const spinnerWord = document.getElementById('spinnerWord');
-    const spinnerDesc = document.getElementById('spinnerDesc');
-    const spinnerImage = document.getElementById('spinnerImage') ? document.getElementById('spinnerImage').querySelector('img') : null;
-    const nextBtn = document.getElementById('nextSpinner');
+  /* ========== Everyday Vibes Spinner Script ========== */
+function initSpinner() {
+  // Data ya vibes
+  const spinnerData = [
+    { word: 'Inspiration ✨', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img: 'https://source.unsplash.com/600x400/?sunrise,motivation' },
+    { word: 'Urwenya 😂', desc: '“Umuntu wese afite inkuru ye — tanga akanya.”', img: 'https://source.unsplash.com/600x400/?friends,laughing' },
+    { word: 'Imigani 📜', desc: '“Uko ugenda niko ugira.”', img: 'https://source.unsplash.com/600x400/?african,culture,tradition' },
+    { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img: 'https://source.unsplash.com/600x400/?running,athlete' }
+  ];
 
-    function show(i) {
-      const item = spinnerData[i % spinnerData.length];
-      if (spinnerWord) spinnerWord.textContent = item.word;
-      if (spinnerDesc) spinnerDesc.textContent = item.desc;
-      if (spinnerImage) spinnerImage.src = item.img;
+  let idx = 0;
+
+  // Elements
+  const spinnerWord = document.getElementById('spinnerWord');
+  const spinnerDesc = document.getElementById('spinnerDesc');
+  const spinnerImage = document.getElementById('spinnerImage') ? document.getElementById('spinnerImage').querySelector('img') : null;
+  const nextBtn = document.getElementById('nextSpinner');
+
+  // Function yo kwerekana vibe
+  function show(i) {
+    const item = spinnerData[i % spinnerData.length];
+    if (spinnerWord) {
+      spinnerWord.textContent = item.word;
+      spinnerWord.style.animation = 'none';
+      spinnerWord.offsetHeight; // trigger reflow
+      spinnerWord.style.animation = 'fadeIn 0.6s ease forwards';
     }
-    if (nextBtn) nextBtn.addEventListener('click', () => { idx++; show(idx); });
-    show(0);
+    if (spinnerDesc) {
+      spinnerDesc.textContent = item.desc;
+      spinnerDesc.style.animation = 'none';
+      spinnerDesc.offsetHeight;
+      spinnerDesc.style.animation = 'fadeIn 0.6s ease forwards';
+    }
+    if (spinnerImage) {
+      spinnerImage.src = item.img;
+      spinnerImage.style.animation = 'none';
+      spinnerImage.offsetHeight;
+      spinnerImage.style.animation = 'fadeIn 0.6s ease forwards';
+    }
   }
+
+  // Next button logic
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      idx++;
+      show(idx);
+    });
+  } else {
+    console.warn('Next button not found!');
+  }
+
+  // Auto-rotation fallback (every 8s)
+  setInterval(() => {
+    idx++;
+    show(idx);
+  }, 8000);
+
+  // Initial display
+  show(idx);
+}
+
+// Run after DOM loaded
+document.addEventListener('DOMContentLoaded', initSpinner);
 
   /* ========== QR update ========== */
   function updateQr() {
