@@ -60,6 +60,18 @@
     });
   }
 
+// Optional: auto slideshow for portfolio
+function initPortfolioCarousel() {
+  const cards = document.querySelectorAll('.portfolio-card');
+  let index = 0;
+  setInterval(()=>{
+    cards.forEach((c,i)=> c.style.display = (i===index ? 'block':'none'));
+    index = (index+1) % cards.length;
+  }, 5000); // every 5s
+}
+document.addEventListener('DOMContentLoaded', initPortfolioCarousel);
+
+  
   /* ========== Contact form ========== */
   function initContactForm() {
     const form = document.getElementById('contactForm');
@@ -110,114 +122,7 @@
   }
 
   
-  function renderLpList(filterText = '', category = '', sort = 'recent') {
-  const lpList = document.getElementById('lpList');
-  if (!lpList) return;
-  lpList.innerHTML = '';
-  let items = loadLpLinks();
-
-  // Filter by search text
-  if (filterText) {
-    items = items.filter(i => i.title.toLowerCase().includes(filterText.toLowerCase()));
-  }
-  // Filter by category
-  if (category) {
-    items = items.filter(i => i.category === category);
-  }
-  // Sort
-  if (sort === 'alpha') {
-    items.sort((a,b)=>a.title.localeCompare(b.title));
-  } else if (sort === 'popular') {
-    items.sort((a,b)=> (b.visits||0) - (a.visits||0));
-  } else {
-    items.sort((a,b)=> b.added - a.added); // recent
-  }
-
-  items.forEach(item => {
-    const li = document.createElement('li');
-    li.className = 'lp-item';
-
-    // Thumbnail
-    const thumb = document.createElement('img');
-    thumb.src = `https://www.google.com/s2/favicons?domain=${item.url}`;
-    thumb.alt = 'favicon';
-    thumb.className = 'lp-thumb';
-
-    const a = document.createElement('a');
-    a.href = item.url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.textContent = item.title;
-    a.addEventListener('click', ()=> {
-      item.visits = (item.visits||0)+1;
-      saveLpLinks(items);
-      renderLpList(filterText, category, sort);
-    });
-
-    // Counter
-    const counter = document.createElement('span');
-    counter.className = 'lp-counter';
-    counter.textContent = `👀 ${item.visits||0}`;
-
-    // Favorite
-    const fav = document.createElement('button');
-    fav.textContent = item.favorite ? '⭐' : '☆';
-    fav.className = 'lp-fav';
-    fav.addEventListener('click', ()=> {
-      item.favorite = !item.favorite;
-      saveLpLinks(items);
-      renderLpList(filterText, category, sort);
-    });
-
-    // Share
-    const share = document.createElement('button');
-    share.textContent = '🔗';
-    share.className = 'lp-share';
-    share.addEventListener('click', ()=> {
-      navigator.clipboard.writeText(item.url);
-      showToast('Link copied to clipboard 📋');
-    });
-
-    li.appendChild(thumb);
-    li.appendChild(a);
-    li.appendChild(counter);
-    li.appendChild(fav);
-    li.appendChild(share);
-    lpList.appendChild(li);
-  });
-}
-
-function initLpControls() {
-  const search = document.getElementById('lpSearch');
-  const cat = document.getElementById('lpCategoryFilter');
-  const sort = document.getElementById('lpSort');
-  [search,cat,sort].forEach(el=>{
-    if(el) el.addEventListener('input', ()=> {
-      renderLpList(search.value, cat.value, sort.value);
-    });
-  });
-}
-
-function initLpForm() {
-  const lpForm = document.getElementById('lpAddForm');
-  if (!lpForm) return;
-  lpForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const title = document.getElementById('lpTitle').value.trim();
-    const url = document.getElementById('lpUrl').value.trim();
-    const category = document.getElementById('lpCategory').value;
-    if (!title || !url || !category) {
-      showToast('Shira izina, link, na category');
-      return;
-    }
-    const list = loadLpLinks();
-    list.push({ title, url, category, added: Date.now(), visits:0, favorite:false });
-    saveLpLinks(list);
-    lpForm.reset();
-    showToast('Link yashizwe neza 🎉');
-    renderLpList();
-  });
-}
+  
   
   /* ========== Everyday spinner ========== */
   function initSpinner() {
