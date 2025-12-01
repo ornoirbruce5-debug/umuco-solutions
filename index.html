@@ -3,15 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UMUCO Solutions</title>
+  <title>UMUCO Solutions 🌸✨🌈</title>
   <meta name="description" content="Umuco Solutions — LP ku buntu & subscription 50,000 FBU/ukwezi. Japon kawaii style, youth-friendly, WhatsApp direct, PWA." />
+
+  <!-- Mixed theme colors -->
   <meta name="theme-color" content="#ff6b81" />
+  <meta name="theme-color" content="#7fd3c7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#ffd9b8" media="(prefers-color-scheme: dark)" />
+
+  <!-- PWA manifest + favicon -->
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <!-- Google Fonts mix -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
   <!-- Main kawaii style -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Banner style separate -->
   <link rel="stylesheet" href="banner.css" />
+
+  <!-- Custom inline style for Burundi youth-friendly gradient -->
+  <style>
+    :root {
+      --accent: #ff6b81;   /* vermilion */
+      --accent-2: #7fd3c7; /* teal */
+      --accent-3: #ffd9b8; /* cream */
+      --accent-4: #a78bfa; /* violet */
+      --accent-5: #2ecc71; /* emerald green */
+      --accent-6: #fcd34d; /* sunshine yellow */
+    }
+    body {
+      background: linear-gradient(135deg,
+        var(--accent),
+        var(--accent-2),
+        var(--accent-3),
+        var(--accent-4),
+        var(--accent-5),
+        var(--accent-6)
+      );
+      background-attachment: fixed;
+    }
+    h1,h2,h3 {
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(90deg,
+        var(--accent),
+        var(--accent-2),
+        var(--accent-5),
+        var(--accent-6)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+
+  <!-- Social preview -->
+  <meta property="og:title" content="UMUCO Solutions 🌸✨🌈" />
+  <meta property="og:description" content="Landing Pages ku buntu & subscription 50,000 FBU/ukwezi. Japon kawaii style, youth-friendly, WhatsApp direct, PWA." />
+  <meta property="og:image" content="preview-aline.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://umuco-solutions.example.com" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UMUCO Solutions 🌸✨🌈" />
+  <meta name="twitter:description" content="Youth-friendly LPs, kawaii UI, WhatsApp direct, subscription 50,000 FBU/ukwezi." />
+  <meta name="twitter:image" content="preview-sarah.jpg" />
 </head>
 <body>
   <!-- PWA install banner -->
