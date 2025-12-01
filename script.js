@@ -128,10 +128,10 @@ document.addEventListener('DOMContentLoaded', initPortfolioCarousel);
 function initSpinner() {
   // Data ya vibes
   const spinnerData = [
-    { word: 'Inspiration ✨', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img: "youth-1.jpg" },
-    { word: 'Urwenya 😂', desc: '“Umuntu wese afite inkuru ye — tanga akanya.”', img: "youth-2.jpg" },
-    { word: 'Imigani 📜', desc: '“Uko ugenda niko ugira.”', img: "youth-3.jpg" },
-    { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img: "youth-4.jpg" }
+    { word: 'Inspiration ✨', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img src="youth-1.jpg" },
+    { word: 'Urwenya 😂', desc: '“Umuntu wese afite inkuru ye — tanga akanya.”', img src="youth-2.jpg" },
+    { word: 'Imigani 📜', desc: '“Uko ugenda niko ugira.”', img src="youth-3.jpg" },
+    { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img src="youth-4.jpg" }
   ];
 
   let idx = 0;
