@@ -109,19 +109,44 @@
       </div>
     </section>
 
-    <!-- LP Links -->
     <section id="lp-links" class="section lp-links">
-      <div class="container">
-        <h3>Aho bashira LP zabo</h3>
-        <p>Shira links hano kugira ngo tubone LP zabo vuba:</p>
-        <ul id="lpList" class="lp-list"></ul>
-        <form id="lpAddForm" class="lp-add">
-          <input id="lpTitle" placeholder="Izina rya LP (ex: LP - Aline)" required />
-          <input id="lpUrl" placeholder="https://..." required />
-          <button type="submit" class="btn-primary">Shira link</button>
-        </form>
-      </div>
-    </section>
+  <div class="container">
+    <h3>Aho bashira LP zabo</h3>
+    <p>Shira links hano kugira ngo tubone LP zabo vuba:</p>
+
+    <!-- Search & filter controls -->
+    <div class="lp-controls">
+      <input id="lpSearch" type="text" placeholder="🔎 Shakisha LP..." />
+      <select id="lpCategoryFilter">
+        <option value="">--Category--</option>
+        <option value="business">Business</option>
+        <option value="youth">Youth</option>
+        <option value="education">Education</option>
+      </select>
+      <select id="lpSort">
+        <option value="recent">Recent</option>
+        <option value="alpha">Alphabetical</option>
+        <option value="popular">Most visited</option>
+      </select>
+    </div>
+
+    <!-- LP list -->
+    <ul id="lpList" class="lp-list"></ul>
+
+    <!-- Add form -->
+    <form id="lpAddForm" class="lp-add">
+      <input id="lpTitle" placeholder="Izina rya LP (ex: LP - Aline)" required />
+      <input id="lpUrl" placeholder="https://..." required />
+      <select id="lpCategory" required>
+        <option value="">--Hitamo category--</option>
+        <option value="business">Business</option>
+        <option value="youth">Youth</option>
+        <option value="education">Education</option>
+      </select>
+      <button type="submit" class="btn-primary">Shira link</button>
+    </form>
+  </div>
+      </section>
 
     <!-- Everyday Lifestyle Spinner -->
     <section class="section spinner-section">
