@@ -129,8 +129,24 @@ function initSpinner() {
   // Data ya vibes
   const spinnerData = [
     { word: 'Inspiration ✨', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img src="youth-1.jpg" },
-    { word: 'Urwenya 😂', desc: '“Umuntu wese afite inkuru ye — tanga akanya.”', img src="youth-2.jpg" },
-    { word: 'Imigani 📜', desc: '“Uko ugenda niko ugira.”', img src="youth-3.jpg" },
+    { word: 'Urwenya 😂', desc: '“  Umugabo yakubise umugore wiwe ahakwa kumwica  maze baramufunga .
+Haheze imisi bamujana muri sentare kugira ahanirwe icaha co kugerageza kwica👇👇
+
+Umucamanza: wa mugabo we, wagirizwa icaha co gushaka kwica, uravyemera?
+
+Umugabo: ndavyemera😎
+
+Umucamanza: none kubera iki wamuhondesheje intebe?🤔
+Umugabo: kuko vyananiye guterura imeza 😭🤣🤣🤣🤣
+
+AGAKURU KA BONUS
+
+Umwigisha yariko arabwira abanyeshure kwigana umwete, arababwira ati ni mwigane umwete mumare amashure muje kurondera amafaranga.
+Mumenye ko amafaranga atamera ku biti.
+Akana kamwe karahaguruka kati: nimba amafaranga atamera ku biti, kubera iki amabanki agira amashami🤔😭🤣🤣🤣
+
+Ndiyaranja n'ubwo har'aho ntagutwenza ariko mba nifuza ko uzinduka canke wirirwa unezerewe rero muri bwa bumwe fyonda aha 👉 Buja Entertainment and Tech urabe ahanditse suivre, follow canke gukurikira bivanye n'ururimi Facebook yawe irimwo uhafyonde ugume witwengera ❤️  .”', img src="youth-2.jpg" },
+    { word: 'Imigani 📜', desc: '“Uko witwara bigira inkurikizi.”', img src="youth-3.jpg" },
     { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img src="youth-4.jpg" }
   ];
 
