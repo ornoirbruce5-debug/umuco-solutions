@@ -99,8 +99,7 @@ document.addEventListener('DOMContentLoaded', initPortfolioCarousel);
       const email = (document.getElementById('email') || {}).value.trim() || '';
       const message = (document.getElementById('message') || {}).value.trim() || '';
 
-      // WhatsApp
-      const waText = encodeURIComponent(`Izina: ${name}\nEmail: ${email}\nUbutumwa:\n${message}`);
+      // WhatsApp      const waText = encodeURIComponent(`Izina: ${name}\nEmail: ${email}\nUbutumwa:\n${message}`);
       const waUrl = `https://wa.me/${WA_PHONE}?text=${waText}`;
       openInNewTab(waUrl);
 
@@ -124,16 +123,21 @@ document.addEventListener('DOMContentLoaded', initPortfolioCarousel);
   
   
   
-  /* ========== Everyday Vibes Spinner Script ========== */
+/* ========== Everyday Vibes Spinner Script ========== */
 function initSpinner() {
   // Data ya vibes
   const spinnerData = [
-    { word: 'Inspiration ✨', desc: '“Ntucike intege; intambwe nto ni intambwe.”', img src="youth-1.jpg" },
-    { word: 'Urwenya 😂', desc: '“  Umugabo yakubise umugore wiwe ahakwa kumwica  maze baramufunga .
+    { 
+      word: 'Inspiration ✨', 
+      desc: '“Ntucike intege; intambwe nto ni intambwe.”', 
+      img: "youth-1.jpg" 
+    },
+    { 
+      word: 'Urwenya 😂', 
+      desc: `“Umugabo yakubise umugore wiwe ahakwa kumwica maze baramufunga.
 Haheze imisi bamujana muri sentare kugira ahanirwe icaha co kugerageza kwica👇👇
 
 Umucamanza: wa mugabo we, wagirizwa icaha co gushaka kwica, uravyemera?
-
 Umugabo: ndavyemera😎
 
 Umucamanza: none kubera iki wamuhondesheje intebe?🤔
@@ -141,13 +145,21 @@ Umugabo: kuko vyananiye guterura imeza 😭🤣🤣🤣🤣
 
 AGAKURU KA BONUS
 
-Umwigisha yariko arabwira abanyeshure kwigana umwete, arababwira ati ni mwigane umwete mumare amashure muje kurondera amafaranga.
+Umwigisha yariko arabwira abanyeshure kwigana umwete, arababwira ati: ni mwigane umwete mumare amashure muje kurondera amafaranga.
 Mumenye ko amafaranga atamera ku biti.
-Akana kamwe karahaguruka kati: nimba amafaranga atamera ku biti, kubera iki amabanki agira amashami🤔😭🤣🤣🤣
-
-Ndiyaranja n'ubwo har'aho ntagutwenza ariko mba nifuza ko uzinduka canke wirirwa unezerewe rero muri bwa bumwe fyonda aha 👉 Buja Entertainment and Tech urabe ahanditse suivre, follow canke gukurikira bivanye n'ururimi Facebook yawe irimwo uhafyonde ugume witwengera ❤️  .”', img src="youth-2.jpg" },
-    { word: 'Imigani 📜', desc: '“Uko witwara bigira inkurikizi.”', img src="youth-3.jpg" },
-    { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img src="youth-4.jpg" }
+Akana kamwe karahaguruka kati: nimba amafaranga atamera ku biti, kubera iki amabanki agira amashami🤔😭.”`, 
+      img: "youth-2.jpg" 
+    },
+    { 
+      word: 'Imigani 📜', 
+      desc: '“Uko witwara bigira inkurikizi.”', 
+      img: "youth-3.jpg" 
+    },
+    { 
+      word: 'Motivation 💪', 
+      desc: '“Kora uyu munsi; ejo ni inyongera.”', 
+      img: "youth-4.jpg" 
+    }
   ];
 
   let idx = 0;
@@ -155,7 +167,9 @@ Ndiyaranja n'ubwo har'aho ntagutwenza ariko mba nifuza ko uzinduka canke wirirwa
   // Elements
   const spinnerWord = document.getElementById('spinnerWord');
   const spinnerDesc = document.getElementById('spinnerDesc');
-  const spinnerImage = document.getElementById('spinnerImage') ? document.getElementById('spinnerImage').querySelector('img') : null;
+  const spinnerImage = document.getElementById('spinnerImage') 
+    ? document.getElementById('spinnerImage').querySelector('img') 
+    : null;
   const nextBtn = document.getElementById('nextSpinner');
 
   // Function yo kwerekana vibe
@@ -204,13 +218,13 @@ Ndiyaranja n'ubwo har'aho ntagutwenza ariko mba nifuza ko uzinduka canke wirirwa
 // Run after DOM loaded
 document.addEventListener('DOMContentLoaded', initSpinner);
 
-  /* ========== QR update ========== */
-  function updateQr() {
-    const waQr = document.getElementById('waQr');
-    if (waQr) {
-      waQr.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/${WA_PHONE}`;
-    }
+/* ========== QR update ========== */
+function updateQr() {
+  const waQr = document.getElementById('waQr');
+  if (waQr) {
+    waQr.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://wa.me/${WA_PHONE}`;
   }
+}
 
   /* ========== PWA install banner ========== */
   function initPwaBanner() {
