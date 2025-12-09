@@ -122,12 +122,7 @@ Umucamanza: wa mugabo we, wagirizwa icaha co gushaka kwica, uravyemera?
 Umugabo: ndavyemera😎
 
 Umucamanza: none kubera iki wamuhondesheje intebe?🤔
-Umugabo: kuko vyananiye guterura imeza 😭🤣🤣🤣🤣
-
-AGAKURU KA BONUS
-
-Umwigisha yariko arabwira abanyeshure ati: "Mumenye ko amafaranga atamera ku biti."
-Akana kamwe karahaguruka kati: "Nimba amafaranga atamera ku biti, kubera iki amabanki agira amashami?" 🤔😂”`, img: "youth-2.jpg" },
+Umugabo: kuko vyananiye guteru imeza🤭😂😂.”', img: "youth-2.jpg" },
       { word: 'Imigani 📜', desc: '“Uko witwara bigira inkurikizi.”', img: "youth-3.jpg" },
       { word: 'Motivation 💪', desc: '“Kora uyu munsi; ejo ni inyongera.”', img: "youth-4.jpg" }
     ];
